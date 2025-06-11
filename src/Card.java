@@ -9,9 +9,7 @@ public class Card {
         this.rank = rank;
     }
 
-    public String getRank() {
-        return rank;
-    }
+    public String getRank() {return rank;}
 
     public int getvalue() {
         return value;
@@ -20,30 +18,4 @@ public class Card {
     public String toString() {
         return rank + " of " + suit;
     }
-
-
 }
-
-/*
-package OOPReview;
-
-public class Polygon extends Object {
-    private int sides;
-
-    public int getSides() {
-        return sides;
-    }
-
-    public Polygon(int sides) {
-        this.sides = sides;
-    }
-
-    @Override
-    public String toString() {
-        return "OOPReview.Polygon [sides=" + sides + "]";
-    }
-
-}
-
-
- */
