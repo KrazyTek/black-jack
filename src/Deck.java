@@ -1,13 +1,18 @@
 import java.util.ArrayList;
 
+import static java.util.Collections.shuffle;
+
 public class Deck {
     private String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
     private String[] suits = {"Spades", "Hearts", "Clubs", "Diamonds"};
+    private ArrayList<Card> deck = new ArrayList<>(52);
 
-    public void createDeck() {
-        ArrayList<Object> deck = new ArrayList<>();
-        deck.ensureCapacity(52);
-
+    public Deck() {
+        create();
+        shuffle(deck);
+    }
+    
+    public void create() {
         for (String suit : suits) {
             for (int i = 0; i < ranks.length; i++) {
                 int value = i+1;
@@ -17,6 +22,13 @@ public class Deck {
                 deck.add(new Card(value, ranks[i], suit));
             }
         }
+    }
+
+    public void shuffleDeck() {
+        shuffle(deck);
+    }
+
+    public void peek() {
         System.out.println(deck);
     }
 }
