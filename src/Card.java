@@ -9,7 +9,13 @@ public class Card {
         this.rank = rank;
     }
 
-    public String getRank() {return rank;}
+    public String getRank() {
+        return rank;
+    }
+
+    public String getSuit() {
+        return suit;
+    }
 
     public int getvalue() {
         return value;
@@ -18,4 +24,10 @@ public class Card {
     public String toString() {
         return rank + " of " + suit;
     }
+
+    public boolean isAce() {
+        return value == 11 || value == 1;
+    }
+
+
 }

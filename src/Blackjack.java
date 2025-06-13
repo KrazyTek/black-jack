@@ -1,6 +1,9 @@
 public class Blackjack {
     public static void main(String[] args) {
         Deck deck = new Deck();
-        deck.peek();
+        Hand hand = new Hand();
+
+        System.out.println(deck.peek());
+
     }
 }
