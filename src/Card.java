@@ -17,7 +17,7 @@ public class Card {
         return suit;
     }
 
-    public int getvalue() {
+    public int getValue() {
         return value;
     }
 
@@ -29,5 +29,7 @@ public class Card {
         return value == 11 || value == 1;
     }
 
-
+    public String getImageFilename() {
+        return rank.toLowerCase() + "_of_" + suit.toLoverCase() + ".png";
+    }
 }
