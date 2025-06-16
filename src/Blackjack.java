@@ -1,4 +1,4 @@
-package BLACKJACK;
+// package BLACKJACK;
 
 import java.util.*;
 
@@ -17,7 +17,7 @@ public class Blackjack {
             dealer.clear();
 
 
-            if (deck.peek().size() < 10) {
+            if (deck.peek().size() < 13) {  // 25% of Deck; might be more appropriate?
                 deck.reset();
             }
 
@@ -30,14 +30,14 @@ public class Blackjack {
             // display initial hands deals
             System.out.println("Your hand: " + player.getCards());
             System.out.println("Total: " + player.totalValue());
-            System.out.println("Dealer shows: " + dealer.getCards().get(0));
+            System.out.println("Dealer shows: " + dealer.getCards().getFirst());
 
             // Player's turn
             while (true) {
                 System.out.print("Hit or stand? ");
                 String choice = input.nextLine().trim().toLowerCase();
 
-                if (choice.equals("hit")) {
+                if (choice.equals("hit") || choice.equals("h")) {
                     Card drawn = deck.dealCard();
                     player.drawCard(drawn);
                     System.out.println("You drew: " + drawn);
@@ -47,7 +47,7 @@ public class Blackjack {
                         System.out.println("Bust! Dealer wins.");
                         break;
                     }
-                } else if (choice.equals("stand")) {
+                } else if (choice.equals("stand") || choice.equals("s")) {
                     break;
                 } else {
                     System.out.println("Invalid input. Please type 'hit' or 'stand'.");

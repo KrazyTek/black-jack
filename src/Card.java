@@ -30,6 +30,6 @@ public class Card {
     }
 
     public String getImageFilename() {
-        return rank.toLowerCase() + "_of_" + suit.toLoverCase() + ".png";
+        return rank.toLowerCase() + "_of_" + suit.toLowerCase() + ".png";
     }
 }
