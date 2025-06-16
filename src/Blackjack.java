@@ -34,7 +34,7 @@ public class Blackjack {
             System.out.println("Dealer shows: " + dealer.getCards().getFirst());
 
             // Player's turn
-            while (true) {
+            while (player.totalValue() < 21) {  // Turn ends if you have a Blackjack
                 System.out.print("Hit or stand? ");
                 String choice = input.nextLine().trim().toLowerCase();
 
@@ -42,7 +42,8 @@ public class Blackjack {
                     Card drawn = deck.dealCard();
                     player.drawCard(drawn);
                     System.out.println("You drew: " + drawn);
-                    System.out.println("Hand: " + player.getCards() + " (Total: " + player.totalValue() + ")");
+                    System.out.println("Your hand: " + player.getCards());
+                    System.out.println("Total: " + player.totalValue());
 
                     if (player.isBust()) {
                         System.out.println("Bust! Dealer wins.");
@@ -63,8 +64,8 @@ public class Blackjack {
                     Card drawn = deck.dealCard();
                     dealer.drawCard(drawn);
                     System.out.println("Dealer drew: " + drawn);
-                    System.out.println("Dealer hand: " + dealer.getCards() + " (Total: " + dealer.totalValue() + ")");
                 }
+                System.out.println("Dealer hand: " + dealer.getCards() + " (Total: " + dealer.totalValue() + ")");
 
                 if (dealer.isBust()) {
                     System.out.println("Dealer busted! You win!");
