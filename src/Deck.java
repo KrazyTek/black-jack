@@ -3,9 +3,9 @@ import java.util.ArrayList;
 import static java.util.Collections.shuffle;
 
 public class Deck {
-    private final String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
-    private final String[] suits = {"Spades", "Hearts", "Clubs", "Diamonds"};
-    private final ArrayList<Card> deck;
+    private String[] ranks = {"Ace", "2", "3", "4", "5", "6", "7", "8", "9", "10", "Jack", "Queen", "King"};
+    private String[] suits = {"Spades", "Hearts", "Clubs", "Diamonds"};
+    private ArrayList<Card> deck;
 
     public Deck() {
         deck = new ArrayList<>(52);
