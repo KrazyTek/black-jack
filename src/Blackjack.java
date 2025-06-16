@@ -85,7 +85,7 @@ public class Blackjack {
             }
 
             System.out.print("\nPlay again? (yes/no): ");
-            String again = input.nextLine().trim().toLowerCase();
+            String again = input.nextLine().toLowerCase();
             if (!again.equals("yes") && !again.equals("y")) {
                 playAgain = false;
             }
