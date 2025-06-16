@@ -17,8 +17,9 @@ public class Blackjack {
             dealer.clear();
 
 
-            if (deck.peek().size() < 13) {  // 25% of Deck; might be more appropriate?
+            if (deck.peek().size() < 13) {  // 13 is around 25% of Deck; might be more appropriate?
                 deck.reset();
+                System.out.println("Reshuffling...");
             }
 
             // initial deal
@@ -58,7 +59,7 @@ public class Blackjack {
             if (!player.isBust()) {
                 System.out.println("\nDealer's turn...");
                 System.out.println("Dealer hand: " + dealer.getCards() + " (Total: " + dealer.totalValue() + ")");
-                while (dealer.totalValue() < 17) {
+                while (dealer.totalValue() < 17) {  // dealer must stand if the value is 17 or more
                     Card drawn = deck.dealCard();
                     dealer.drawCard(drawn);
                     System.out.println("Dealer drew: " + drawn);
