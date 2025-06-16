@@ -16,7 +16,7 @@ public class Hand {
         int aces = 0;
 
         for (Card card : hand) {
-            total += card.getvalue();
+            total += card.getValue();
             if (card.isAce()) {
                 aces++;
             }
