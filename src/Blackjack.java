@@ -1,6 +1,6 @@
 // package BLACKJACK;
 
-import java.util.*;
+import java.util.Scanner;
 
 public class Blackjack {
     public static void main(String[] args) {
@@ -39,9 +39,7 @@ public class Blackjack {
                 String choice = input.nextLine().trim().toLowerCase();
 
                 if (choice.equals("hit") || choice.equals("h")) {
-                    Card drawn = deck.dealCard();
-                    player.drawCard(drawn);
-                    System.out.println("You drew: " + drawn);
+                    System.out.println("You drew: " + player.drawCard(deck.dealCard()));
                     System.out.println("Your hand: " + player.getCards());
                     System.out.println("Total: " + player.totalValue());
 
@@ -61,11 +59,9 @@ public class Blackjack {
                 System.out.println("\nDealer's turn...");
                 System.out.println("Dealer hand: " + dealer.getCards() + " (Total: " + dealer.totalValue() + ")");
                 while (dealer.totalValue() < 17) {  // dealer must stand if the value is 17 or more
-                    Card drawn = deck.dealCard();
-                    dealer.drawCard(drawn);
-                    System.out.println("Dealer drew: " + drawn);
+                    System.out.println("Dealer drew: " + dealer.drawCard(deck.dealCard()));
+                    System.out.println("Dealer hand: " + dealer.getCards() + " (Total: " + dealer.totalValue() + ")");
                 }
-                System.out.println("Dealer hand: " + dealer.getCards() + " (Total: " + dealer.totalValue() + ")");
 
                 if (dealer.isBust()) {
                     System.out.println("Dealer busted! You win!");

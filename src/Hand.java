@@ -7,8 +7,9 @@ public class Hand {
         hand = new ArrayList<>();
     }
 
-    public void drawCard(Card card) {
+    public Card drawCard(Card card) {   // Now returns a Card object so temp var (drawn) not needed
         hand.add(card);
+        return card;
     }
 
     public int totalValue() {
